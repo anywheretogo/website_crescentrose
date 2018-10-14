@@ -134,3 +134,8 @@ def delete_post(id):
     db.session.commit()
     flash('post has been delete_post')
     return redirect(url_for('.index'))
+
+@main.route('/show_ip', methods=['GET'])
+def show_visitor_ip():
+    ip = request.remote_addr
+    return ip
