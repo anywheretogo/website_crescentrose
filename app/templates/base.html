@@ -2,7 +2,6 @@
 
 {% block title %}Crescent Rose{% endblock %}
 
-
 {% block head %}
 {{ super() }}
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
@@ -10,13 +9,11 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 
 <style type="text/css">
-    body {background-image: url('static/bg.jpg');
+body {background-image: url('static/bg.jpg');
 background-size: cover;
 background-attachment: fixed;}
 </style>
-
 {% endblock %}
-
 
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">

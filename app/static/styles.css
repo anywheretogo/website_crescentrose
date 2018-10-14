@@ -22,7 +22,7 @@ div.post-date {
     float: right;
 }
 div.post-author {
-    font-weight: bold;
+    color: black;
 }
 div.post-thumbnail {
     position: absolute;
@@ -63,4 +63,6 @@ div.flask-pagedown-preview h3 {
 .post-body h3 {
     font-size: 120%;
 }
-
+div.post_title {
+    font-size: 150%;
+}

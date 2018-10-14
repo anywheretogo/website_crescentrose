@@ -137,5 +137,5 @@ def delete_post(id):
 
 @main.route('/show_ip', methods=['GET'])
 def show_visitor_ip():
-    ip = request.remote_addr
-    return ip
+    visit_ip = request.remote_addr
+    return visit_ip
