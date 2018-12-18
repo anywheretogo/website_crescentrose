@@ -23,8 +23,8 @@ def download(id_name):
 
 def log_in():
     s = requests.Session()
-    data = {'username': 'blueliqi',
-        'password': 'redback12',
+    data = {'username': '',
+        'password': '',
         'usecookie': 0,
         'action': 'login',
         'submit': '''%26%23160%3B%B5%C7%26%23160%3B%26%23160%3B%C2%BC%26%23160%3B'''}
