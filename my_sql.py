@@ -1,16 +1,15 @@
 import peewee
-import datetime, time
 from wenku8 import read_index, log_in
 
 setting = {
-    "host":"localhost",
-    "port":3306,
-    "user":"root",
+    "host":"guoliangsz.mysql.pythonanywhere-services.com",
+#    "port":3306,
+    "user":"guoliangsz",
     "password":"lukawish12",
 
 }
 
-db = peewee.MySQLDatabase("websites", **setting)
+db = peewee.MySQLDatabase("guoliangsz$web", **setting)
 
 class A(peewee.Model):
     name = peewee.CharField()
@@ -21,32 +20,8 @@ class A(peewee.Model):
     num = peewee.IntegerField(unique=True)
     introduction = peewee.TextField()
     class Meta:
-        table_name = 'Articles'
+        table_name = 'webku_article'
         database = db
-
-
-
-
-def migrate():
-    a_list = A.select()
-    s = []
-    for i in a_list:
-        #print(i.index, i.name, type(i))
-        a = {}
-        a["name"] = i.name
-        a["num"] = i.num
-        a["author"] = i.author
-        a["publisher"] = i.publisher
-        a["finished"] = i.finished
-        a["last_update"] = i.last_update
-        a["introduction"] = i.introduction
-        #print(a,type(a), s, type(s))
-        s.append(a)
-
-    query = B.insert_many(s).execute()
-    print(query)
-
-
 
 
 def main_proecss():
@@ -54,7 +29,7 @@ def main_proecss():
     s = log_in()
     for i in range(1, 123):
         data = read_index(s, i)
-        query = Article.insert_many(data).execute()
+        A.insert_many(data).execute()
         print(i, "page ok")
     db.close()
 
