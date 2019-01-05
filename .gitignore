@@ -1,2 +1,5 @@
 dj/
 __pycache__
+start.bat
+acc.py
+*.pyc

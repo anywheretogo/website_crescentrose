@@ -2,14 +2,14 @@ import peewee
 from wenku8 import read_index, log_in
 
 setting = {
-    "host":"guoliangsz.mysql.pythonanywhere-services.com",
+    "host":"127.0.0.1",
 #    "port":3306,
-    "user":"guoliangsz",
+    "user":"root",
     "password":"lukawish12",
 
 }
 
-db = peewee.MySQLDatabase("guoliangsz$web", **setting)
+db = peewee.MySQLDatabase("websites", **setting)
 
 class A(peewee.Model):
     name = peewee.CharField()
@@ -20,21 +20,23 @@ class A(peewee.Model):
     num = peewee.IntegerField(unique=True)
     introduction = peewee.TextField()
     class Meta:
-        table_name = 'webku_article'
+        table_name = 'wenku_article'
         database = db
 
 
 def main_proecss():
-    db.connect()
     s = log_in()
-    for i in range(1, 123):
+    db.connect()    
+    exist_data = [i.num for i in A.select()]
+    for i in range(1, 10):
         data = read_index(s, i)
-        A.insert_many(data).execute()
+        to_add = [ i for i in data if i["num"] not in exist_data]
+        if to_add:
+            A.insert_many(to_add).execute()
         print(i, "page ok")
     db.close()
 
-if __name__ == "__main__":
-    while True:
-        main_proecss()
-
+if __name__ == "__main__":      
+    main_proecss()
+    pass
 
