@@ -7,5 +7,7 @@
 
 所以做了个索引网站，可以浏览下载文库吧的所有小说 包括版权受限的
 
-http://guoliangsz.pythonanywhere.com/ 
+http://guoliangsz.pythonanywhere.com/ 欢迎访问
+
+用的是pythonanywhere.com免费空间 + django框架 + mysql数据库
 
