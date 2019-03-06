@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 dj/
 __pycache__
 *.bat
 acc.py
 *.pyc
 settings.py
+=======
+dj/
+__pycache__
+*.bat
+acc.py
+*.pyc
+settings.py
+>>>>>>> 8d510f42f7aa74c6b072962d3b87abd5eb7ecdfd
