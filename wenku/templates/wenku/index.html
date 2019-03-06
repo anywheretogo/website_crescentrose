@@ -9,10 +9,10 @@
                 <th>文库</th>
                 <th>更新</th>
                 <th>完结</th>
-                <th>阅读链接</th>
+                <th>文库链接</th>
                 <th>下载链接</th>
             </tr>
-            
+
             {% for article in article_list %}
             <tr>
                 <td>{{ article.name }}</td>
@@ -20,9 +20,9 @@
                 <td>{{ article.publisher }}</td>
                 <td>{{ article.last_update }}</td>
                 <td>{{ article.finished }}</td>
-                <td> <a href=https://www.wenku8.net/book/{{article.num}}.htm> 
+                <td> <a href=https://www.wenku8.net/book/{{article.num}}.htm>
                 原文 <a></td>
-                <td><a href=http://dl.wenku8.com/down.php?type=txt&id={{article.num}} download="" >下载 <a></td>
+                <td><a href=http://dl.wenku8.com/down.php?type=txt&id={{article.num}}&fname={{ article.name }} >下载 <a></td>
             </tr>
             {% endfor %}
         </table>
